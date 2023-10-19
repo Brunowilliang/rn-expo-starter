@@ -1,32 +1,22 @@
-import { SplashScreen, Stack } from 'expo-router'
-import FontProvider from '@/config/FontConfig'
 import React from 'react'
+import FontProvider from '@/providers/FontProvider'
+import { SplashScreen, Stack } from 'expo-router'
 import ThemeConfig from '@/config/ThemeConfig'
-
-export { ErrorBoundary } from 'expo-router'
 
 SplashScreen.preventAutoHideAsync()
 
-export default function Layout() {
-  const { loaded } = FontProvider()
-
-  if (!loaded) {
-    return null
-  }
-
-  return <RootLayout />
-}
-
-function RootLayout() {
+const RootLayout = () => {
   return (
     <ThemeConfig>
-      <Stack
-        screenOptions={{
-          animation: 'fade',
-          headerShown: false,
-          gestureEnabled: false,
-        }}
-      />
+      <Stack screenOptions={{ headerShown: false }} />
     </ThemeConfig>
   )
 }
+
+const EnhancedRootLayout = FontProvider(RootLayout)
+
+const Layout = () => {
+  return <EnhancedRootLayout />
+}
+
+export default Layout
