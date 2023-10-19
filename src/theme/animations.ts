@@ -1,0 +1,30 @@
+import { createAnimations } from '@tamagui/animations-moti'
+
+export const animations = createAnimations({
+  bouncy: {
+    type: 'spring',
+    damping: 10,
+    mass: 0.9,
+    stiffness: 100,
+  },
+  lazy: {
+    type: 'timing',
+    duration: 100,
+    damping: 0,
+    mass: 0.9,
+    stiffness: 0,
+  },
+  theme: {
+    type: 'timing',
+    duration: 500,
+    damping: 1,
+    mass: 1,
+    stiffness: 100,
+  },
+  quick: {
+    type: 'spring',
+    damping: 20,
+    mass: 1.2,
+    stiffness: 250,
+  },
+})

@@ -1,0 +1,17 @@
+app.json
+expo-env.d.ts
+package-lock.json
+tamagui.config.ts
+assets
+metro.config.js
+package.json
+tsconfig.json
+babel.config.js
+node_modules
+- src
+  - app
+  - components config
+  - store
+  - theme
+  - types
+yarn.lock
