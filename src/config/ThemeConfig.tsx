@@ -13,8 +13,8 @@ const ThemeConfig = ({ children }: ThemeConfigProps) => {
 
   return (
     <Animated.View
-      entering={FadeIn.duration(500)}
-      exiting={FadeOut.duration(500)}
+      entering={FadeIn.duration(350)}
+      exiting={FadeOut.duration(350)}
       key={currentTheme}
       style={{ flex: 1 }}
     >
