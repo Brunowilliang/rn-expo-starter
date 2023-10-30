@@ -1,23 +1,11 @@
 import 'react-native-gesture-handler'
 
-import FontProvider from '@/providers/FontProvider'
-import { SplashScreen, Stack } from 'expo-router'
+import PreloadWrapper from '@/providers/PreloadWrapper'
 import ThemeConfig from '@/config/ThemeConfig'
-
-SplashScreen.preventAutoHideAsync()
-
-const RootLayout = () => {
-  return (
-    <ThemeConfig>
-      <Stack screenOptions={{ headerShown: false }} />
-    </ThemeConfig>
-  )
-}
-
-const EnhancedRootLayout = FontProvider(RootLayout)
+import { Stack } from 'expo-router'
 
 const Layout = () => {
-  return <EnhancedRootLayout />
+  return <Stack screenOptions={{ headerShown: false }} />
 }
 
-export default Layout
+export default ThemeConfig(PreloadWrapper(Layout))

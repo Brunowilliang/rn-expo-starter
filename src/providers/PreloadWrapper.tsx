@@ -1,4 +1,4 @@
-import React, { FC, useEffect, ReactElement } from 'react'
+import React, { useEffect } from 'react'
 import { useFonts } from 'expo-font'
 import { SplashScreen } from 'expo-router'
 
@@ -14,28 +14,22 @@ const Fonts = {
   MontserratRegular: require('../../assets/fonts/Montserrat-Regular.ttf'),
 }
 
-interface Props {}
-
-const FontProvider = (WrappedComponent: FC<Props>): FC<Props> => {
-  return function FontWrappedComponent(props: Props): ReactElement | null {
+const PreloadWrapper = (Component: React.ComponentType<any>) => {
+  return function PreloadComponent(props: any): React.ReactNode {
     const [loaded, error] = useFonts(Fonts)
 
     useEffect(() => {
       if (error) {
         console.error(error)
-      }
-    }, [error])
-
-    useEffect(() => {
-      if (loaded) {
+      } else if (loaded) {
         SplashScreen?.hideAsync()
       }
-    }, [loaded])
+    }, [loaded, error])
 
     if (!loaded) return null
 
-    return <WrappedComponent {...props} />
+    return <Component {...props} />
   }
 }
 
-export default FontProvider
+export default PreloadWrapper
