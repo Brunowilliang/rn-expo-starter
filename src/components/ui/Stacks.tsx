@@ -14,6 +14,15 @@ const defaultVariants = {
       justifyContent: 'center',
     },
   },
+  Pressable: {
+    true: {
+      animation: 'lazy',
+      pressStyle: {
+        scale: 0.98,
+        opacity: 0.4,
+      },
+    },
+  },
 } as const
 
 // @ts-ignore

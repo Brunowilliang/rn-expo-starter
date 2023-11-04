@@ -20,6 +20,7 @@ export const tokens = createTokens({
     purpleAlpha: 'rgba(108, 99, 255, 0.50)',
 
     white: '#FFFFFF',
+    black: '#000000',
     overlay: 'rgba(0, 0, 0, 0.50)',
     transparent: 'transparent',
     success: '#12a454',

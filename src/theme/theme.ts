@@ -30,6 +30,8 @@ const light = {
   primaryAlpha: tokens.color.blueAlpha,
 
   text: tokens.color.textLight,
+
+  white: tokens.color.white,
 }
 
 type BaseTheme = typeof light
@@ -41,6 +43,8 @@ const dark: BaseTheme = {
   primaryAlpha: tokens.color.blueAlpha,
 
   text: tokens.color.textDark,
+
+  white: tokens.color.black,
 }
 
 const purple: BaseTheme = {
@@ -50,6 +54,8 @@ const purple: BaseTheme = {
   primaryAlpha: tokens.color.purpleAlpha,
 
   text: tokens.color.textPurple,
+
+  white: tokens.color.white,
 }
 
 export const themes = {
